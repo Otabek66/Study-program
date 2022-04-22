@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "800989599474",
+    "project_id": "onboarding-de91b",
+    "storage_bucket": "onboarding-de91b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:800989599474:android:8bbd971cbfa73c47bd626b",
+        "android_client_info": {
+          "package_name": "com.otabek.onboarding"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "800989599474-rn99l5c7ce23g47fde9nfd5dr5l82i40.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbhPeLF8AVwRcVb0FhH91mi-DRqMTlL6M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "800989599474-rn99l5c7ce23g47fde9nfd5dr5l82i40.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
