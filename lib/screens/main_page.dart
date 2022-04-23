@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:onboarding/core/constants/colors_const.dart';
 import 'package:onboarding/provider/main_page_provider.dart';
+import 'package:onboarding/screens/accaunting_page.dart';
 import 'package:onboarding/screens/home_page.dart';
 import 'package:provider/provider.dart';
 
@@ -35,7 +36,7 @@ class _MainPageState extends State<MainPage> with TickerProviderStateMixin {
          HomePage(userName: widget.userName,),
           Container(color:Colors.blue),
           Container(color:Colors.red),
-          Container(color:Colors.green),
+          AccountingPage(),
       ],),
 
       bottomNavigationBar: TabBar(

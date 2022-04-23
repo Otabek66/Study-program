@@ -31,6 +31,8 @@ class MyRoutes {
 
       case '/signIn':
         return MaterialPageRoute(builder: ((context) => SignInPage()));
+       case 'splashtwo':
+        return MaterialPageRoute(builder: ((context) => SignInPage()));
      
     }
   }

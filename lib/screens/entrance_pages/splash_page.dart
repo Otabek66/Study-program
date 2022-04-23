@@ -35,11 +35,20 @@ class SplashPage extends StatelessWidget {
         Positioned(
           left: 62,
           bottom: 211,
-          child: MyBoldText.myBoldText('    Hello and\nwelcome there!',color: Colors.white,textSize: 42),),
-          Positioned(
+          child: MyBoldText.myBoldText('    Hello and\nwelcome there!',
+              color: Colors.white, textSize: 42),
+        ),
+        const Positioned(
             left: 68,
             bottom: 130,
-            child: Text(" Get an overview of how you are performing\nand motivate yourself to achieve even moew.",style: TextStyle(fontSize: MyTextSizeConst.ktextSize, color: Colors.white),))
+            child: Text(
+              " Get an overview of how you are performing\nand motivate yourself to achieve even moew.",
+              style: TextStyle(
+                  fontSize: MyTextSizeConst.ktextSize, color: Colors.white),
+            )),
+            Positioned(child: ElevatedButton(
+              child: Text("Let's Start"),
+            onPressed:(){Navigator.pushNamed(context, 'splashtwo');} ,))
       ]),
     );
   }
