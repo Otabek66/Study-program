@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:onboarding/provider/chekbox_provider.dart';
 import 'package:onboarding/provider/sign_up_provider.dart';
+import 'package:onboarding/provider/user_name.dart';
 import 'package:onboarding/screens/entrance_pages/sign_up_interests.dart';
 import 'package:onboarding/services/new.dart';
 import 'package:onboarding/widgets/my_messanger.dart';
@@ -44,7 +46,9 @@ class SignUpPage extends StatelessWidget {
             sizedbox(24),
             Row(
               children: [
-                Checkbox(value: false, onChanged: (_) {}),
+                Checkbox( value: context.watch<ChekBoxProvider>().chekboxforSignUp, onChanged: (_) {
+                   context.read<ChekBoxProvider>().checkboxSignUp;
+                  }),
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.1,
                   width: MediaQuery.of(context).size.width * 0.73,
@@ -57,14 +61,8 @@ class SignUpPage extends StatelessWidget {
             ),
             ElevatedButton(
               child: const Text("Sign Up"),
-              onPressed: () async{
-                await MyService().signUp(emailController.text, passwordController.text).then((value) {
-                  if(value){
-                    Navigator.pushAndRemoveUntil(context,MaterialPageRoute(builder: ((context) => SignUpInterestsPage())), (route) => false);
-                  }else{
-                    MyMessenger.messenger(context, "Error while Sign up!", Colors.red);
-                  }
-                });
+              onPressed: () async {  
+               context.read<SignUpProvider>().signUp(context, emailController.text, passwordController.text);
               },
             ),
           ],

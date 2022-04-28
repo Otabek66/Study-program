@@ -7,8 +7,7 @@ import 'package:onboarding/screens/home_page.dart';
 import 'package:provider/provider.dart';
 
 class MainPage extends StatefulWidget {
-  String userName;
-  MainPage({ Key? key, required this.userName}) : super(key: key);
+  const MainPage({ Key? key}) : super(key: key);
 
   @override
   State<MainPage> createState() => _MainPageState();
@@ -33,7 +32,7 @@ class _MainPageState extends State<MainPage> with TickerProviderStateMixin {
       body: TabBarView(
         controller: _tabController,
         children: [
-         HomePage(userName: widget.userName,),
+         HomePage(),
           Container(color:Colors.blue),
           Container(color:Colors.red),
           AccountingPage(),

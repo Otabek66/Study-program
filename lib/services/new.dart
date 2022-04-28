@@ -15,13 +15,14 @@ class MyService{
         email: emailController,
         password: passwordController,
       );
+      
       return true;
     } catch (e) {
       Exception(e);
       return false;
     }
   }
-   Future<bool> signIn( String emailController,
+  Future<bool> signIn( String emailController,
       String passwordController) async {
     try {
       await FireService.auth.signInWithEmailAndPassword(
@@ -62,9 +63,9 @@ class MyService{
           "studentId": studentId,
       });
       return true;
-    } catch (e) {
+    } catch (e){
       MyMessenger.messenger(context, "Error while Sign Up", Colors.red);
-    return false;
+      return false;
     }    
   } 
 }

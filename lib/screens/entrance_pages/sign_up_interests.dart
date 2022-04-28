@@ -11,11 +11,7 @@ class SignUpInterestsPage extends StatelessWidget {
       body: ElevatedButton(
         child: Text("Continue"),
         onPressed: () {
-          Navigator.pushNamed(
-            context,
-           '/main'
-            
-          );
+          Navigator.push(context, MaterialPageRoute(builder: (_)=> MainPage()));
         },
       ),
     );

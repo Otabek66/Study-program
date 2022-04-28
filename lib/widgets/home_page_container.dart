@@ -5,7 +5,7 @@ import 'package:onboarding/core/constants/size_const.dart';
 class MyContainerForHomePage{
   static Container container(BuildContext context,String number, String text, Color textColor){
     return Container(
-      margin:const EdgeInsets.all(8),
+      margin:EdgeInsets.all(MediaQuery.of(context).size.height * 0.01),
       width: MediaQuery.of(context).size.width * 0.43,
       height: MediaQuery.of(context).size.height * 0.12,
       decoration: BoxDecoration(

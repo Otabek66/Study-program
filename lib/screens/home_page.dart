@@ -2,15 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:onboarding/core/constants/colors_const.dart';
 import 'package:onboarding/core/constants/size_const.dart';
+import 'package:onboarding/provider/user_name.dart';
 import 'package:onboarding/widgets/home_page_container.dart';
 import 'package:onboarding/widgets/my_bold_text.dart';
+import 'package:provider/provider.dart';
 
 class HomePage extends StatelessWidget {
-  String userName;
-  HomePage({Key? key, required this.userName}) : super(key: key);
+  
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     List submenu = [
       Image.asset('assets/submenu/course.png'),
       Image.asset('assets/submenu/subjects.png'),
@@ -25,26 +28,25 @@ class HomePage extends StatelessWidget {
           Expanded(
               flex: 362,
               child: Container(
-                margin: EdgeInsets.only(top: 30),
+                margin: EdgeInsets.only(top: size.height * 0.04),
                 color: Color(0xFFF3F5F8),
                 child: Column(children: [
-                  Row(
-                    children: [
-                      Text('Hi, $userName'),
-                      Container(
-                        color: Colors.red,
-                        height: 30,
-                        width: 30,
-                        child: SvgPicture.asset(
+                  SizedBox(
+                    height: size.height * 0.05,
+                    child: Row(
+                      children: [
+                        Text('Hi, ${context.watch<ForUserName>().username}'),
+                        SizedBox(width: size.width  * 0.018,),
+                        SvgPicture.asset(
                           'assets/icons/notification.svg',
                           color: Colors.black,
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                   Text('Here is you activity today,'),
                   Padding(
-                    padding: EdgeInsets.all(12),
+                    padding: EdgeInsets.all(size.height * 0.012),
                     child: Column(children: [
                       Row(
                         children: [
