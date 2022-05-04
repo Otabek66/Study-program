@@ -1,3 +1,3 @@
 class MyTextSizeConst {
-  static const double ktextSize = 13;
+  static const double ktextSize = 13.0;
 }
